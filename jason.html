@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    
+</head>
+<body>
+
+    <button class="btn btn-primary my-5" onclick="Fetchstudent()">Fetch Student</button>
+    <button class="btn btn-success my-5" onclick="Fetcfaculty()">Fetch Faculty</button>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <th>Student Id</th>
+            <th>Student Name</th>
+            <th>Student batch</th>
+            <th>Student Contact</th>
+            <th>Student Course</th>
+        </thead>
+
+        <tbody id="data">
+
+        </tbody>
+    </table>
+
+    <script>
+        
+        var Student = [
+            {
+                Std_Id : "101",
+                Std_Name : "Huzaifa",
+                Std_batch : "7 to 9",
+                Std_Contact : "0123-1234567",
+                Std_Course : "ADSE",
+
+            },
+
+            {
+                Std_Id : "102",
+                Std_Name : "Ali",
+                Std_batch : "7 to 9",
+                Std_Contact : "0123-1234567",
+                Std_Course : "CPISM",
+
+            },
+
+            {
+                Std_Id : "103",
+                Std_Name : "Hammad",
+                Std_batch : "7 to 9",
+                Std_Contact : "0123-1234567",
+                Std_Course : "JDISM",
+
+            },
+
+            {
+                Std_Id : "104",
+                Std_Name : "Hamza",
+                Std_batch : "7 to 9",
+                Std_Contact : "0123-1234567",
+                Std_Course : "KPISM",
+
+            },
+
+            {
+                Std_Id : "105",
+                Std_Name : "junaid",
+                Std_batch : "7 to 9",
+                Std_Contact : "0123-1234567",
+                Std_Course : "LMISM",
+
+            },
+        ]
+
+        var Faculty = [
+            {
+                Teacher_Id : "F-101",
+                Teacher_Name : "Huzaifa",
+                Teacher_batch : "7 to 9",
+                Teacher_Contact : "0123-1234567",
+                Teacher_Course : "ADSE",
+            },
+
+            {
+                Teacher_Id : "102",
+                Teacher_Name : "Ali",
+                Teacher_batch : "7 to 9",
+                Teacher_Contact : "0123-1234567",
+                Teacher_Course : "CPISM",
+
+            },
+
+            {
+                Teacher_Id : "103",
+                Teacher_Name : "Hammad",
+                Teacher_batch : "7 to 9",
+                Teacher_Contact : "0123-1234567",
+                Teacher_Course : "JDISM",
+
+            },
+
+            {
+                Teacher_Id : "104",
+                Teacher_Name : "Hamza",
+                Teacher_batch : "7 to 9",
+                Teacher_Contact : "0123-1234567",
+                Teacher_Course : "KPISM",
+
+            },
+
+            {
+                Teacher_Id : "105",
+                Teacher_Name : "junaid",
+                Teacher_batch : "7 to 9",
+                Teacher_Contact : "0123-1234567",
+                Teacher_Course : "LMISM",
+            },
+        ]
+
+        function Fetchstudent()
+        {
+            document.getElementById("data").innerHTML="";
+
+            for(var i in Student)
+            {
+                document.getElementById("data").innerHTML+= `
+                <tr>
+                    <td> ${Student[i].Std_Id} </td>
+                    <td> ${Student[i].Std_Name} </td>
+                    <td> ${Student[i].Std_batch} </td>
+                    <td> ${Student[i].Std_Contact} </td>
+                    <td> ${Student[i].Std_Course} </td>
+                    <td> <img src='${Student[i].Std_img}'> </td>
+                </tr>`;
+            }
+        }
+
+        function Fetchfaculty()
+        {
+            document.getElementById("data").innerHTML="";
+
+            for(var j in Faculty)
+            {
+                document.getElementById("data").innerHTML+= `
+                <tr>
+                    <td> ${Faculty[j].Teacher_Id} </td>
+                    <td> ${Faculty[j].Teacher_Name} </td>
+                    <td> ${Faculty[j].Teacher_batch} </td>
+                    <td> ${Faculty[j].Teacher_Contact} Teacher</td>
+                    <td> ${Faculty[j].Teacher_Course} </td>
+                    <td> <img src='${Teacher[i].Std_img}'> </td>
+                </tr>`;
+            }
+        }
+
+    </script>
+</body>
+</html>
